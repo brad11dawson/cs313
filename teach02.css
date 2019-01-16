@@ -1,0 +1,15 @@
+body {
+	background-color: blue;
+	width: 50%;
+	margin: auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+.section {
+	border: solid black 3px;
+	padding: 10px;
+	margin: 5px;
+}
