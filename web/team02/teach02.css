@@ -17,3 +17,7 @@ h1 {
   margin: 5px;
   background-color: lightblue
 }
+
+.section:hover {
+  font-weight: bold;
+}
