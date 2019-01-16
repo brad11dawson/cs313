@@ -1,15 +1,19 @@
 body {
-	background-color: lightblue;
-	width: 50%;
-	margin: auto;
+  background-color: darkblue;
+  width: 50%;
+  margin: auto;
 }
 
 h1 {
-	text-align: center;
+  color: lightblue;
+  text-align: center;
+  font-size: 60px;
+  
 }
 
 .section {
-	border: solid black 3px;
-	padding: 10px;
-	margin: 5px;
+  border: solid black 6px;
+  padding: 10px;
+  margin: 5px;
+  background-color: lightblue
 }
