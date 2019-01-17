@@ -4,7 +4,10 @@
   <title>Team Activity - 02</title>
   <link rel="stylesheet" type="text/css" href="teach02.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="teach02.js"></script>
+  
+    
 </head>
 
 <body>
@@ -13,20 +16,23 @@
     <h2>This is the second Section</h2>
     <p>I am so excited for this class! I am looking forward to learning a lot.</p>
     
-    <input type="text" id="color" value="color">
-    <button onclick="changeColor()">Change Color!</button>
+    <input type="text" id="newColor" value="color">
+    <button id="colorButton" /*onclick="changeColor()"*/>Change Color!</button>
   </div>
   <div class="section" id="two">
     <h2>This is another section</h2>
 	<p>I hope i get to buil a lot of cool stuff this semester!</p>
+    <button onclick="clickFunction()">Click Me</button>
   </div>
   <div class="section" id="three">
     <h2>This is the last section</h2>
     <p>If i work hard i might be able to get an A! Here goes Nothing!</p>
-    <button onclick="clickFunction()">Click Me</button>
   </div>
+  <br/>
+  <button id="hideButton">Hide Section 3!</button>
+  <button id="showButton">Reappear!</button>
+  
+  
 
-  
-  
   </body>
 </html>
