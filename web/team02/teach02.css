@@ -1,11 +1,12 @@
 body {
-  background-color: darkblue;
-  width: 50%;
-  margin: auto;
+  background-color: darkblue !important;
+  margin: auto !important;
+  width: 90%;
+  text-align: center;
 }
 
 h1 {
-  color: lightblue;
+  color: white !important;
   text-align: center;
   font-size: 60px;
   
@@ -14,8 +15,10 @@ h1 {
 .section {
   border: solid black 6px;
   padding: 10px;
-  margin: 5px;
-  background-color: lightblue
+
+  background-color: lightblue;
+  box-sizing: border-box;
+  height: 200px;
 }
 
 .section:hover {

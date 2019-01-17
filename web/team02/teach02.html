@@ -4,6 +4,8 @@
   <title>Team Activity - 02</title>
   <link rel="stylesheet" type="text/css" href="teach02.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="teach02.js"></script>
   
@@ -12,22 +14,26 @@
 
 <body>
   <h1>Team Activity 2!</h1>
-  <div class="section" id="one">
-    <h2>This is the second Section</h2>
+  
+  <div class="row">
+  <div class="section col-lg-4" id="one">
+    <h2>This is the first section</h2>
     <p>I am so excited for this class! I am looking forward to learning a lot.</p>
     
     <input type="text" id="newColor" value="color">
-    <button id="colorButton" /*onclick="changeColor()"*/>Change Color!</button>
+    <button id="colorButton">Change Color!</button>
   </div>
-  <div class="section" id="two">
+  <div class="section col-lg-4" id="two">
     <h2>This is another section</h2>
 	<p>I hope i get to buil a lot of cool stuff this semester!</p>
     <button onclick="clickFunction()">Click Me</button>
   </div>
-  <div class="section" id="three">
+  <div class="section col-lg-4" id="three">
     <h2>This is the last section</h2>
     <p>If i work hard i might be able to get an A! Here goes Nothing!</p>
   </div>
+  </div>
+  
   <br/>
   <button id="hideButton">Hide Section 3!</button>
   <button id="showButton">Reappear!</button>
