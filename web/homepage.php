@@ -35,10 +35,12 @@
         <p class="p-3 text-white">I am what you call the perfect mix of nerd and jock. I grew up 
         watching and playing basketball my entire life. Being a fan of the Phoenix Suns, it has been a rought few years. I also have always loved math and Science. After serving my mission in Jamaica i undertook the challenge of getting a degree in Computer Science. So far i have loved programming and look forward to everything I get to learn in the two years I still have in college.</p>
       </div>
+      <div class="text-white">
       <?php
-        echo "Date: " . date("Y/m/d") . "<br>";
+        echo "Date: " . date("m/d/Y") . "<br>";
         echo "Time: " . date("h:i:sa") . "<br>";
       ?>
+    </div>
     </div>
     
 
