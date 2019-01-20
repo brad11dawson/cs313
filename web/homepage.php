@@ -19,7 +19,7 @@
       <nav class="navbar navbar-expand-md navbar-dark bg-secondary">      
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="homepage.html">Homepage</a>
+            <a class="nav-link" href="homepage.php">Homepage</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="directory.html">Directory</a>
