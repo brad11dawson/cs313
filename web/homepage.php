@@ -32,9 +32,22 @@
         <img src="basketball.jpeg" class="img-responsive rounded-circle" alt="Basketball" heigh="300" width="300">
       </div>
       <div class="bg-secondary">
+        <div class ="dropdown">
+          <button class="btn btn-primary drowpdown-toggle" type="button" data-toggle="dropdown">
+            My Favorite Things
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">Basketball</li>
+            <li class="dropdown-item">Mexican Food</li>
+            <li class="dropdown-item">Family</li>
+            <li class="dropdown-item">Programming</li>
+            <li class="dropdown-item">Sleeping</li>
+          </ul>
+        </div>
         <p class="p-3 text-white">I am what you call the perfect mix of nerd and jock. I grew up 
         watching and playing basketball my entire life. Being a fan of the Phoenix Suns, it has been a rought few years. I also have always loved math and Science. After serving my mission in Jamaica i undertook the challenge of getting a degree in Computer Science. So far i have loved programming and look forward to everything I get to learn in the two years I still have in college.</p>
       </div>
+        
       <div class="text-white">
       <?php
         date_default_timezone_set("America/Denver");
