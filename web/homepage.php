@@ -37,6 +37,7 @@
       </div>
       <div class="text-white">
       <?php
+        date_default_timezone_set("America/Denver");
         echo "Date: " . date("m/d/Y") . "<br>";
         echo "Time: " . date("h:i:sa") . "<br>";
       ?>
