@@ -41,7 +41,9 @@ session_start();
           <div class="panel panerl-default">
             <div class="panel-heading">Items in cart</div>
             <div class="pannel-body">
-              Current Items
+              <?php
+                print_r($_SESSION)["cart"];
+              ?>
             </div>
           </div>
         </div>
