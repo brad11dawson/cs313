@@ -20,19 +20,6 @@ session_start();
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
-      
-  <script>
-  $(document).ready(function(){
-    $("button").click(function(){
-      $.post("add_cart.php",
-      {
-        item: $(this).val()
-      },
-      );
-      alert("added " + $(this).val() + " to shopping cart");
-    });
-  });
-  </script>
   
   </head>
   <body>
@@ -49,13 +36,41 @@ session_start();
           <li class="nav-item">
             <a class="nav-link" href="cart.php">Shopping Cart</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="checkout.php">Checkout</a>
           </li>
         </ul>
       </nav>
-
+      
+      <div class="container content-justify-center col-lg-4 text-white p-3">
+        <h2>Congratulations!</h2>
+        <p>Items Being Shippied:</p>
+        <?php
+          $address = $_POST["address"];
+          $city = $_POST["city"];
+          $state = $_POST["state"];
+          $zip = $_POST["zip"];
+          $arrlength = count($_SESSION["cart"]);
+          echo "<ul>";
+          for($x = 0; $x < $arrlength; $x++) {
+            echo "<li>" . $_SESSION["cart"][$x] . " juice</li>";
+            }
+          echo "</ul>";
+        ?>
+        <br/>
+        <p>Shipping Address:</p>
+        <?php
+          echo $address;
+          echo "<br/>";
+          echo "$city, $state $zip";
+        ?>
+        <?php
+          session_unset();
+          session_destroy();
+        ?>
       </div>
     </div>
+    
+    
   </body>
 </html>

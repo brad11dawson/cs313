@@ -89,8 +89,9 @@ session_start();
         </div>
       </div>
       <div class="p-3 text-white text-center">
-          <a class="btn btn-secondary" href="checkout.php" role="button">Check Out</a>
-        </div>
+        <a class="btn btn-secondary" href="checkout.php" role="button">Check Out</a>
+        <a class="btn btn-secondary" href="browse.php" role="button">Continue Browsing</a>
+      </div>
     </div>
   </body>
       

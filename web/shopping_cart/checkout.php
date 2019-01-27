@@ -20,19 +20,6 @@ session_start();
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
-      
-  <script>
-  $(document).ready(function(){
-    $("button").click(function(){
-      $.post("add_cart.php",
-      {
-        item: $(this).val()
-      },
-      );
-      alert("added " + $(this).val() + " to shopping cart");
-    });
-  });
-  </script>
   
   </head>
   <body>
@@ -55,7 +42,34 @@ session_start();
         </ul>
       </nav>
 
-      </div>
-    </div>
-  </body>
-</html>
+      <div class="container justify-content-center text-white col-lg-6 p-4">
+        <h2>Checkout Form</h2>
+        <p>To check out and revcieve your fresh juice, please enter an adress</p>
+        <form method="post" action="confirmation.php">
+          <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" name="address" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" class="form-control" name="city" id="inputCity" placeholder="Rexburg">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <input type="text" class="form-control" name="state" id="inputState" placeholder="ID">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Zip</label>
+              <input type="text" class="form-control" name="zip" id="inputZip" placeholder="12345">
+            </div>
+          </div>
+
+            <button type="submit" class="btn btn-secondary">Submit Purchase</button>
+            <a class="btn btn-secondary" href="cart.php" role="button">Return to Cart</a>
+          </form>
+        </div>
+
+            </div>
+          </body>
+        </html>
