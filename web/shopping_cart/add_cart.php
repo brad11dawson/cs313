@@ -1,15 +1,13 @@
 <?php
 session_start();
 
-$_SESSION["cart"];
-$cartlist = $_SESSION["cart"];
-
-$item = $_REQUEST["item"]
-
-array_push($cartlist, $item);
-
-$_SESSION["cart"] = $cartlist;
-
-$_SESSION["cart"]["numitem"] = $item;
-
+$item = $_REQUEST["item"];
+if($_SESSION["cart"]) {
+    $stack = $_SESSION["cart"];
+}
+else {
+    $stack = array();
+}
+array_push($stack, $item);
+$_SESSION["cart"] = $stack;
 ?>

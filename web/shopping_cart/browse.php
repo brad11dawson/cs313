@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION["numitems"] = 0;
+
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +48,9 @@ $_SESSION["numitems"] = 0;
           </li>
           <li class="nav-item">
             <a class="nav-link" href="cart.php">Shopping Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="checkout.php">Checkout</a>
           </li>
         </ul>
       </nav>
