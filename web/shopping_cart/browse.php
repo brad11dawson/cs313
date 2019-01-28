@@ -56,7 +56,7 @@ session_start();
       </nav>
 
 
-      <div class=" text-white text-center">
+      <div class="text-white text-center">
         <div class="p-3">
           <h2>Juice Products</h2>
         </div>

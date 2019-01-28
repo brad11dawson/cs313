@@ -42,14 +42,17 @@ session_start();
         </ul>
       </nav>
       
-      <div class="container content-justify-center col-lg-4 text-white p-3">
+      <div class="container content-justify-center col-md-4 text-white p-3">
         <h2>Congratulations!</h2>
+        
+        <div class="container bg-success p-3">
         <p>Items Being Shippied:</p>
         <?php
-          $address = $_POST["address"];
-          $city = $_POST["city"];
-          $state = $_POST["state"];
-          $zip = $_POST["zip"];
+          $address = htmlspecialchars($_POST["address"]);
+          $city = htmlspecialchars($_POST["city"]);
+          $state = htmlspecialchars($_POST["state"]);
+          $zip = htmlspecialchars($_POST["zip"]);
+        
           $arrlength = count($_SESSION["cart"]);
           echo "<ul>";
           for($x = 0; $x < $arrlength; $x++) {
@@ -64,13 +67,15 @@ session_start();
           echo "<br/>";
           echo "$city, $state $zip";
         ?>
+      </div>
+      
+
         <?php
           session_unset();
           session_destroy();
         ?>
       </div>
     </div>
-    
-    
+     
   </body>
 </html>

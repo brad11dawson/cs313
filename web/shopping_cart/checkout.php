@@ -9,6 +9,7 @@ session_start();
     <title>Browse Items</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="shoppingcart.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
@@ -22,8 +23,8 @@ session_start();
 
   
   </head>
-  <body>
-    <div class="container bg-primary">
+  <body bg-primary>
+    <div class="content container bg-primary">
       <div class="text-white text-center p-2">
         <h1>Fresh Juice to You!</h1>
       </div>
@@ -69,7 +70,6 @@ session_start();
             <a class="btn btn-secondary" href="cart.php" role="button">Return to Cart</a>
           </form>
         </div>
-
-            </div>
-          </body>
-        </html>
+    </div>
+  </body>
+</html>
