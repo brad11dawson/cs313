@@ -11,3 +11,5 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   echo htmlspecialchars($row['content']);
   echo '</p>';
 }
+
+?>
