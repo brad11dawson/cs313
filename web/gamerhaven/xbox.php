@@ -47,8 +47,8 @@
   
   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   {
-    echo '<h2>' . $row['game_name'] . '<h2>';
-    echo '<p>' . $row['description'] . '<p>';
+    echo '<h2>' . $row['game_name'] . '</h2>';
+    echo '<p>' . $row['description'] . '</p>';
   }
   ?>
 </body>
