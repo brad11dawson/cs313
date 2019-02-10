@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
   
-<body>
+<body class="bg-light">
   <?php include 'header.php'; ?>
   <div class="container bg-secondary p-3 my-2">
     <h1>Welcome to Game Haven</h1>

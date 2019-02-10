@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
   
-<body>
+<body class="bg-light">
   <?php include 'header.php'; ?>
   
   <div class="container bg-primary py-2">
