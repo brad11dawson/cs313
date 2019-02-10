@@ -12,32 +12,11 @@
   
 <body>
   <?php include 'header.php'; ?>
-  <div class="container bg-light my-2">
-    <h1 class="text-center">Xbox One</h1>
-  </div>
   
+  <div class="container">
+    <h1 class="text-center">Xbox One</h1>
   <?php  
-  try
-  {
-    $dbUrl = getenv('DATABASE_URL');
-
-    $dbOpts = parse_url($dbUrl);
-
-    $dbHost = $dbOpts["host"];
-    $dbPort = $dbOpts["port"];
-    $dbUser = $dbOpts["user"];
-    $dbPassword = $dbOpts["pass"];
-    $dbName = ltrim($dbOpts["path"],'/');
-
-    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  }
-  catch (PDOException $ex)
-  {
-    echo 'Error!: ' . $ex->getMessage();
-    die();
-  }
+  include 'connectdatabase.php';
   
   $statement = $db->query("SELECT game_name, description 
   FROM game_console 
@@ -47,9 +26,10 @@
   
   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   {
-    echo '<h2>' . $row['game_name'] . '</h2>';
+    echo '<h3>' . $row['game_name'] . '</h3>';
     echo '<p>' . $row['description'] . '</p>';
   }
   ?>
+  </div>
 </body>
 </html>

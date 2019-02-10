@@ -12,8 +12,10 @@
   
 <body>
   <?php include 'header.php'; ?>
-   <h2>PlayStation 4</h2>
-    <?php  
+  
+  <div class="container">
+   <h2 class="="text-center>PlayStation 4</h2>
+  <?php  
   try
   {
     $dbUrl = getenv('DATABASE_URL');
@@ -44,9 +46,10 @@
   
   while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   {
-    echo '<h2>' . $row['game_name'] . '</h2>';
+    echo '<h3>' . $row['game_name'] . '</h3>';
     echo '<p>' . $row['description'] . '</p>';
   }
   ?>
+  </div>
 </body>
 </html>
