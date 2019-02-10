@@ -61,12 +61,13 @@ INSERT INTO game_console(game_id, console_id) VALUES(3, 1);
 INSERT INTO game_console(game_id, console_id) VALUES(3, 2);
 INSERT INTO game_console(game_id, console_id) VALUES(4, 3);
 
+INSERT INTO general_user(username, password, display_name) VALUES('NotAUser', 'NotAPassword', 'NotAName');
+
+INSERT INTO review(score, user_id, game_id, description) VALUES(10, 1, 1, 'This was the best game EVER! NO QUESTIONS ASKED!');
 
 #Query Example getting all video game names one the xbox one console
-SELECT game_name 
+SELECT game_name, description 
 FROM game_console 
-INNER JOIN game 
-	ON game_console.game_id = game.id 
-INNER JOIN console 
-	ON game_console.console_id = console.id 
+INNER JOIN game ON game_console.game_id = game.id 
+INNER JOIN console ON game_console.console_id = console.id 
 WHERE console_name = 'Xbox One';
