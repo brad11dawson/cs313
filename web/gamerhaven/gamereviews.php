@@ -16,7 +16,7 @@
   <?php>
   $Game_Name = $_GET["gamename"];
   echo '<div class="container bg-primary py-2">';
-  echo '<h2 class="text-center">$Game_Name Reviews</h2>';
+  echo '<h2 class="text-center">' . $Game_Name . ' Reviews</h2>';
 
   include 'connectdatabase.php';
   
