@@ -28,6 +28,15 @@
                           ON r.user_id = u.id
                           WHERE g.game_name = '$Game_Name';");
   
+  while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+{
+  echo '<div class="container bg-light my-2 py-2">';
+  echo '<h3>Score: ' . $row['score'] . '</h3>';
+  echo '<p>Review: ' . $row['r.description'] . '</p>';
+  echo '<p>User: ' . $row['display_name'] . '<p>';
+  echo '</div>';
+}
+  
   ?>
   
 </body>
