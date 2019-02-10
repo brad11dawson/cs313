@@ -1,6 +1,6 @@
 <div class="pb-2 pt-2 bg-primary text-center border-bottom">
-  <h1>Game Haven</h1>      
-  <p>Welcome to Game Haven, the best place to find reviews for games!</p>
+  <h1>Gamer Haven</h1>      
+  <p>Welcome to Gamer Haven, the best place to find reviews for games!</p>
 </div>
 
 
