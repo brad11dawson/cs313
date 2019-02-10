@@ -24,13 +24,7 @@
   INNER JOIN console ON game_console.console_id = console.id 
   WHERE console_name = 'Xbox One';");
   
-  while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-  {
-    echo '<div class="container bg-primary">';
-    echo '<h3>' . $row['game_name'] . '</h3>';
-    echo '<p>' . $row['description'] . '</p>';
-    echo '</div>';
-  }
+  include 'showgames.php';
   ?>
   </div>
 </body>
