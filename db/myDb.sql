@@ -62,8 +62,10 @@ INSERT INTO game_console(game_id, console_id) VALUES(3, 2);
 INSERT INTO game_console(game_id, console_id) VALUES(4, 3);
 
 INSERT INTO general_user(username, password, display_name) VALUES('NotAUser', 'NotAPassword', 'NotAName');
+INSERT INTO general_user(username, password, display_name) VALUES('RealUser', 'RealPassword', 'RealName');
 
-INSERT INTO review(score, user_id, game_id, description) VALUES(10, 1, 1, 'This was the best game EVER! NO QUESTIONS ASKED!');
+INSERT INTO review(score, user_id, game_id, description) VALUES(10, 1, 1, 'This was the best game EVER! NO QUESTIONS ASKED!');ory line wa
+INSERT INTO review(score, user_id, game_id, description) VALUES(7, 2, 1, 'The game was really fun, but I never played any of the other games, so the sts super confusing. Like Whats with all these organization 13 guys?');
 
 #Query Example getting all video game names one the xbox one console
 SELECT game_name, description 
@@ -73,10 +75,13 @@ INNER JOIN console ON game_console.console_id = console.id
 WHERE console_name = 'Xbox One';
 
 #Query of getting all the reviews of a specific video game
-SELECT score, description, display_name
+SELECT score, r.description, display_name
 FROM review AS r
 JOIN game AS g 
 ON r.game_id = g.id
 JOIN general_user AS u
 ON r.user_id = u.id
 WHERE g.game_name = 'Kingdom Hearts III';
+
+#Simple query to get all video game titles from the data
+SELECT game_name FROM game;

@@ -12,9 +12,31 @@
   
 <body class="bg-light">
   <?php include 'header.php'; ?>
-  <div class="container bg-secondary p-3 my-2">
-    <h1>Welcome to Game Haven</h1>
-    <h2>A community for sharing and reviewing your favorite games!</h2>
+  <div class="container bg-primary py-2">
+    <h2 class="text-center text-white">Welcome to Gamer Haven</h2>
+    
+    <p class="text-white">If your a gamer, then Gamer Haven is your community. Browse your favorite games,
+    find new games, and see what other gamers have to say about them. If you feel like
+    giving back, feel free to post your own review on one of our countless selection of
+    reviewable games! Enjoy your new little peace of paradise.</p>
+    
+    <h3>We now have games on the following consoles ready to review:</h3>
+    <ul class="list-group">
+      <li class="list-group-item">Xbox One</li>
+      <li class="list-group-item">PlayStation 4</li>
+      <li class="list-group-item">Nintendo Switch</li>
+    </ul>
+    <h3>Recently Added Games:</h3>
+    <?php
+    include 'connectdatabase.php';
+    
+    $statement = $db->query("SELECT game_name, description 
+    FROM game_console 
+    INNER JOIN game ON game_console.game_id = game.id 
+    INNER JOIN console ON game_console.console_id = console.id;");
+    
+    include 'showgames.php'; 
+    ?>
   </div>
 </body>
 </html>
