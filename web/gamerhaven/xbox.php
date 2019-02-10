@@ -14,7 +14,7 @@
   <?php include 'header.php'; ?>
   
   <div class="container">
-    <h1 class="text-center">Xbox One</h1>
+    <h2 class="text-center">Xbox One</h2>
   <?php  
   include 'connectdatabase.php';
   
