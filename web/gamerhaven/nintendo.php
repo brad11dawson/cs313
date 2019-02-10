@@ -13,7 +13,7 @@
 <body>
   <?php include 'header.php'; ?> 
   
-  <div class="container">
+  <div class="container bg-light">
     <h2 class="text-center">Nintendo Switch</h2>
     <?php
     include 'connectdatabase.php';
@@ -25,11 +25,12 @@
     WHERE console_name = 'Nintendo Switch';");
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
-      echo '<h3>' . $row['game_name'] . '</h3>';
-      echo '<p>' . $row['description'] . '</p>';
-    }
-    ?>
+  {
+    echo '<div class="container bg-primary">';
+    echo '<h3>' . $row['game_name'] . '</h3>';
+    echo '<p>' . $row['description'] . '</p>';
+    echo '</div>';
+  }
   </div>
 </body>
 </html>
