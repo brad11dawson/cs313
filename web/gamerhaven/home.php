@@ -30,10 +30,7 @@
     <?php
     include 'connectdatabase.php';
     
-    $statement = $db->query("SELECT game_name, description 
-    FROM game_console 
-    INNER JOIN game ON game_console.game_id = game.id 
-    INNER JOIN console ON game_console.console_id = console.id;");
+    $statement = $db->query("SELECT game_name, description FROM game;");
     
     include 'showgames.php'; 
     ?>
