@@ -13,13 +13,16 @@
 <body class="bg-light">
   <?php include 'header.php'; ?>
   
-  <div class="container bg-primary py-2">
-    <h2 class="text-center">Reviews</h2>
-  <?php  
+  <?php>
+  $Game_Name = $_GET["gamename"];
+  echo '<div class="container bg-primary py-2">';
+  echo '<h2 class="text-center">$Game_Name Reviews</h2>';
+
   include 'connectdatabase.php';
   
   echo '<p>Specific game reviews will go here</p>';
+  echo '</div>';
   ?>
-  </div>
+  
 </body>
 </html>
