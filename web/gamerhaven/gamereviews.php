@@ -26,7 +26,7 @@
                           ON r.game_id = g.id
                           JOIN general_user AS u
                           ON r.user_id = u.id
-                          WHERE g.game_name = $Game_Name;");
+                          WHERE g.game_name = '$Game_Name';");
   
   ?>
   
