@@ -71,3 +71,12 @@ FROM game_console
 INNER JOIN game ON game_console.game_id = game.id 
 INNER JOIN console ON game_console.console_id = console.id 
 WHERE console_name = 'Xbox One';
+
+#Query of getting all the reviews of a specific video game
+SELECT score, description, display_name
+FROM review AS r
+JOIN game AS g 
+ON r.game_id = g.id
+JOIN general_user AS u
+ON r.user_id = u.id
+WHERE g.game_name = 'Kingdom Hearts III';

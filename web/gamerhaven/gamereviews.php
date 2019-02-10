@@ -20,8 +20,14 @@
 
   include 'connectdatabase.php';
   
-  echo '<p>Specific game reviews will go here</p>';
-  echo '</div>';
+  $statement = $db->query("SELECT score, r.description, display_name
+                          FROM review AS r
+                          JOIN game AS g 
+                          ON r.game_id = g.id
+                          JOIN general_user AS u
+                          ON r.user_id = u.id
+                          WHERE g.game_name = $Game_Name;");
+  
   ?>
   
 </body>
