@@ -13,7 +13,7 @@
 <body>
   <?php include 'header.php'; ?>
   
-  <div class="container bg-light">
+  <div class="container bg-primary">
    <h2 class="text-center">PlayStation 4</h2>
   <?php  
   include 'connectdatabase.php';
