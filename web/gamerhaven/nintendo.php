@@ -11,43 +11,44 @@
 </head>
   
 <body>
-  <?php include 'header.php'; ?>
-  <h2>Nintendo Switch</h2>
-  
-  <?php
-  try
-  {
-    $dbUrl = getenv('DATABASE_URL');
+  <?php include 'header.php'; ?> 
+  <div class="container">
+    <h2 class="text-center">Nintendo Switch</h2>
+    <?php
+    try
+    {
+      $dbUrl = getenv('DATABASE_URL');
 
-    $dbOpts = parse_url($dbUrl);
+      $dbOpts = parse_url($dbUrl);
 
-    $dbHost = $dbOpts["host"];
-    $dbPort = $dbOpts["port"];
-    $dbUser = $dbOpts["user"];
-    $dbPassword = $dbOpts["pass"];
-    $dbName = ltrim($dbOpts["path"],'/');
+      $dbHost = $dbOpts["host"];
+      $dbPort = $dbOpts["port"];
+      $dbUser = $dbOpts["user"];
+      $dbPassword = $dbOpts["pass"];
+      $dbName = ltrim($dbOpts["path"],'/');
 
-    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  }
-  catch (PDOException $ex)
-  {
-    echo 'Error!: ' . $ex->getMessage();
-    die();
-  }
-  
-  $statement = $db->query("SELECT game_name, description 
-  FROM game_console 
-  INNER JOIN game ON game_console.game_id = game.id 
-  INNER JOIN console ON game_console.console_id = console.id 
-  WHERE console_name = 'Nintendo Switch';");
-  
-  while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-  {
-    echo '<h2>' . $row['game_name'] . '</h2>';
-    echo '<p>' . $row['description'] . '</p>';
-  }
-  ?>
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch (PDOException $ex)
+    {
+      echo 'Error!: ' . $ex->getMessage();
+      die();
+    }
+
+    $statement = $db->query("SELECT game_name, description 
+    FROM game_console 
+    INNER JOIN game ON game_console.game_id = game.id 
+    INNER JOIN console ON game_console.console_id = console.id 
+    WHERE console_name = 'Nintendo Switch';");
+
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    {
+      echo '<h2>' . $row['game_name'] . '</h2>';
+      echo '<p>' . $row['description'] . '</p>';
+    }
+    ?>
+  </div>
 </body>
 </html>
