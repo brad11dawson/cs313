@@ -83,5 +83,5 @@ JOIN general_user AS u
 ON r.user_id = u.id
 WHERE g.game_name = 'Kingdom Hearts III';
 
-#Simple query to get all video game titles from the data
-SELECT game_name FROM game;
+#Simple query to get all video game titles and descriptions from the data
+SELECT game_name, description FROM game;

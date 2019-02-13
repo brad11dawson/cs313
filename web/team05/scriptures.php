@@ -28,3 +28,4 @@ foreach ($scriptures as $row)
   echo htmlspecialchars($row['content']);
   echo '</p>';
 }
+?>
