@@ -1,3 +1,4 @@
+31 lines (25 sloc)  858 Bytes
 <h1>Scripture Resources</h1>
 
 <form method="get">
@@ -7,9 +8,7 @@ Scripture Book: <input type="text" name="book">
 
 <?php
 require_once '_db.php';
-
 $statement = $db->query('SELECT id, book, chapter, verse, content FROM scriptures;');
-
 if (isset($_REQUEST['book'])) {
   $conditions = ' WHERE book=:book';
 }
@@ -20,7 +19,6 @@ if ($conditions) {
   $stmt->execute();
 }
 $scriptures = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 foreach ($scriptures as $row)
 {
   echo '<p>';
