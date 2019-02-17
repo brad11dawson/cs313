@@ -22,7 +22,7 @@
   <div class="container text-center">
     <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#addReviewForm">Add a Review</button>
     <div id="addReviewForm" class="collapse m-2">
-    <form action="#">
+    <form>
       <div class="form-group">
          <select class="custom-select" required>
           <option selected value="">Select Score</option>
