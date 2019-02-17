@@ -8,7 +8,6 @@ require('connectdatabase.php');
 
 $statement = $db->query("SELECT id FROM game WHERE game_name = '$game_name'");
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-var_dump($result);
 $game_id = $result[0]["id"];
 
 $stmt = $db->prepare('INSERT INTO review(game_id, user_id, score, description) 
