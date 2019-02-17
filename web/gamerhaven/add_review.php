@@ -8,7 +8,9 @@ require('connectdatabase.php');
 
 $statement = $db->query("SELECT id FROM game WHERE game_name = '$game_name'");
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+var_dump($result);
 $game_id = $result['id'];
 echo "<h1>game id: $game_id </h1>";
+echo $game_id;
 
 ?>
