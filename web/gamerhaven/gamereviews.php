@@ -17,11 +17,24 @@
   $Game_Name = $_GET["gamename"];
   echo '<div class="container bg-primary py-2">';
   echo '<h2 class="text-center">' . $Game_Name . ' Reviews</h2>';
+  ?>
 
+  <div class="container">
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#addReviewForm">Simple collapsible</button>
+    <div id="addReviewForm" class="collapse">
+    <form id="addReviewForm" action="#">
+      <textarea name="content">
+      <h3>Score</h3><br/>
+      <input type="text">
+    </form>
+    </div>
+  </div>
+
+  <?php
   include 'connectdatabase.php';
   
   $statement = $db->query("SELECT score, r.description, display_name
-                          FROM review AS r
+                          FROM review AS r 
                           JOIN game AS g 
                           ON r.game_id = g.id
                           JOIN general_user AS u
