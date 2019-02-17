@@ -17,9 +17,8 @@ $stmt->bindValue(':user_id', $user_id, PDO::PARAM_INT);
 $stmt->bindValue(':game_id', $game_id, PDO::PARAM_INT);
 $stmt->execute();
 
-/*
 $new_page = "gamereviews.php?gamename=$game_name";
 
 header("Location: $new_page");
-die();*/
+die();
 ?>
