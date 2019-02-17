@@ -22,7 +22,7 @@
   <div class="container">
     <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#addReviewForm">Simple collapsible</button>
     <div id="addReviewForm" class="collapse">
-    <form id="addReviewForm" action="#">
+    <form action="#">
       <textarea name="content">
       <h3>Score</h3><br/>
       <input type="text">
@@ -50,7 +50,7 @@
   echo '</div>';
 }
   
-  ?>
+?>
   
 </body>
 </html>
