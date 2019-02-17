@@ -6,8 +6,10 @@ $review_content = htmlspecialchars($_POST['review_content']);
 
 require('connectdatabase.php');
 
-$game_id = $db->query('SELECT id FROM game WHERE game_name = $game_name');
-echo "<h1>game id: " . $game_id . "</h1>";
+$statement = $db->query('SELECT id FROM game WHERE game_name = $game_name');
+$result = $statement->fetchAll(PDO::FETCH_ASSOC);
+$game_id = $result['id'];
+echo "<h1>game id: $game_id </h1>";
 
 /*$stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
