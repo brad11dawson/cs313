@@ -22,9 +22,11 @@
   <div class="container text-center">
     <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#addReviewForm">Add a Review</button>
     <div id="addReviewForm" class="collapse m-2">
-    <form>
+    <form method="POST" action="add_review.php">
+      <input type="hidden" name="user_id" value="1">
+      <input type="hidden" name="game_name" value="<?php echo $Game_Name; ?>">
       <div class="form-group">
-         <select class="custom-select" required>
+         <select class="custom-select" name="score" required>
           <option selected value="">Select Score</option>
           <option value="1">One</option>
           <option value="2">Two</option>
@@ -40,7 +42,7 @@
       </div>
       <div class="form-group">
         <label for="reviewContent">Enter Review</label>
-        <textarea class="form-control" id="reviewContent" rows="3" required></textarea>
+        <textarea class="form-control" id="reviewContent" name="review_content" rows="3" required></textarea>
       </div>
        <button type="submit" class="btn btn-secondary mb-2">Submit</button>
     </form>
