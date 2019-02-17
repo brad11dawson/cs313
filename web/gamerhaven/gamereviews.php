@@ -13,19 +13,36 @@
 <body class="bg-light">
   <?php include 'header.php'; ?>
   
-  <?php>
+  <?php
   $Game_Name = $_GET["gamename"];
   echo '<div class="container bg-primary py-2">';
   echo '<h2 class="text-center">' . $Game_Name . ' Reviews</h2>';
   ?>
 
-  <div class="container">
-    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#addReviewForm">Simple collapsible</button>
-    <div id="addReviewForm" class="collapse">
+  <div class="container text-center">
+    <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#addReviewForm">Add a Review</button>
+    <div id="addReviewForm" class="collapse m-2">
     <form action="#">
-      <textarea name="content">
-      <h3>Score</h3><br/>
-      <input type="text">
+      <div class="form-group">
+         <select class="custom-select" required>
+          <option selected value="">Select Score</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+          <option value="4">four</option>
+          <option value="5">five</option>
+          <option value="6">six</option>
+          <option value="7">seven</option>
+          <option value="8">eight</option>
+          <option value="9">nine</option>
+          <option value="10">ten</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="reviewContent">Enter Review</label>
+        <textarea class="form-control" id="reviewContent" rows="3" required></textarea>
+      </div>
+       <button type="submit" class="btn btn-secondary mb-2">Submit</button>
     </form>
     </div>
   </div>
