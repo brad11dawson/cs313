@@ -6,7 +6,7 @@ $review_content = htmlspecialchars($_POST['review_content']);
 
 require('connectdatabase.php');
 
-$statement = $db->query('SELECT id FROM game WHERE game_name = '$game_name'');
+$statement = $db->query("SELECT id FROM game WHERE game_name = '$game_name'");
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 $game_id = $result['id'];
 echo "<h1>game id: $game_id </h1>";
