@@ -85,3 +85,6 @@ WHERE g.game_name = 'Kingdom Hearts III';
 
 #Simple query to get all video game titles and descriptions from the data
 SELECT game_name, description FROM game;
+
+#create a review
+INSERT INTO review(game_id, user_id, score, description) VALUES (2, 2, 9, 'This game was so much fun! You can literally go anywerhe you can see! The secret ending was pretty cool too.');
