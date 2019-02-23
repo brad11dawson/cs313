@@ -28,7 +28,7 @@
     </ul>
     <h3>Recently Added Games:</h3>
 
-    <?php include 'new_game_form.php' ?>
+    <?php include 'new_game_form.php'; ?>
 
     <?php
     include 'connectdatabase.php';
