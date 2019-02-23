@@ -21,22 +21,24 @@
         $statement->execute([':username' => $username]);
         $user_exists = $statement->fetch(PDO::FETCH_ASSOC)['one'];
 
+        if (!$user_exists) {
         $hashedpassword = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
         //Insert into database
-        $stmt = $db->prepare(
-          'INSERT INTO general_user(username, password, display_name)
-          VALUES(:username, :hashedpassword, :display_name);'
-        );
+          $stmt = $db->prepare(
+            'INSERT INTO general_user(username, password, display_name)
+            VALUES(:username, :hashedpassword, :display_name);'
+          );
 
-        $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-        $stmt->bindValue(':hashedpassword', $hashedpassword, PDO::PARAM_STR);
-        $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
-        $stmt->execute();
+          $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+          $stmt->bindValue(':hashedpassword', $hashedpassword, PDO::PARAM_STR);
+          $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
+          $stmt->execute();
 
-        $newURL = "login.php";
-        header("Location: $newURL");
-        die();    
+          $newURL = "login.php";
+          header("Location: $newURL");
+          die();   
+        } 
     }
 ?>
   
@@ -52,6 +54,9 @@
       <form method="POST" action="sign_up.php">
       <div class="form-group">
           <label for="username" class="col-form-label-lg">User Name:</label>
+          <?php if ($user_exists): ?>
+            Sorry, this username was already taken.
+          <?php endif; ?>
           <input type="text" class="form-control" id="username" name="username" placeholder="User Name" required>
       </div>
       <div class="form-group">
