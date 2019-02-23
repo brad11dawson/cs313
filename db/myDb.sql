@@ -88,3 +88,10 @@ SELECT game_name, description FROM game;
 
 #create a review
 INSERT INTO review(game_id, user_id, score, description) VALUES (2, 2, 9, 'This game was so much fun! You can literally go anywerhe you can see! The secret ending was pretty cool too.');
+
+#create a new video game
+#we need to remember to insert into our game_console table
+INSERT INTO game(game_name, description) VALUES('Call Of Duty: Black Ops 4', 'Black ops 4 continues the Call Of Duty tradition being a multiplayer first-person shooter and is the 15th game in the series. Black ops 4 brings back traditional multiplayer, zombies, and brings a new battle royal mode called Blackout');
+INSERT INTO game_console() VALUES();
+
+SELECT currval(pg_get_serial_sequence('game', 'id'));
