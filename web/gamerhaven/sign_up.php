@@ -56,7 +56,7 @@
       <form method="POST" action="sign_up.php">
       <div class="form-group">
           <label for="username" class="col-form-label-lg">User Name:</label>
-          <input type="text" class="form-control" id="username" name="uesrname" placeholder="User Name" required>
+          <input type="text" class="form-control" id="username" name="username" placeholder="User Name" required>
       </div>
       <div class="form-group">
           <label for="displayname" class="col-form-label-lg">Display Name:</label>
