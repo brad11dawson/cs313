@@ -1,7 +1,6 @@
 <?php
 $game_name = htmlspecialchars($_POST['game_name']);
 $game_description = htmlspecialchars($_POST['game_description']);
-$consoles = ($_POST['consoles']);
 
 require('connectdatabase.php');
 
@@ -12,8 +11,8 @@ $stmt->execute();
 $newGameId = $db->lastInsertId('game_id_seq');
 
 //need to loop through selected consoles, adding the game to each console selected
-foreach($consoles as $console_id) {
-    $stmt2 = $db->prepare('INSERT INTO game_console(game_id, console_id) VALUES($newGameId, $console_id');
+foreach($_POST['consoles'] as $console_id) {
+    $stmt2 = $db->prepare('INSERT INTO game_console(game_id, console_id) VALUES($newGameId, $console_id);');
     $stmt2->execute();
 }
 
