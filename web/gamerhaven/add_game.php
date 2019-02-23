@@ -12,10 +12,12 @@ $stmt->execute();
 $newGameId = $db->lastInsertId('game_id_seq');
 
 //need to loop through selected consoles, adding the game to each console selected
-$stmt = $db->prepare('INSERT INTO game_console(game_id, console_id) VALUES($newGameId, $console_id');
-$stmt->execute();
+foreach($consoles as $console_id) {
+    $stmt = $db->prepare('INSERT INTO game_console(game_id, console_id) VALUES($newGameId, $console_id');
+    $stmt->execute();
+}
 
-$new_page = "gamereviews.php?gamename=$game_name";
+$new_page = "home.php";
 
 header("Location: $new_page");
 die();
