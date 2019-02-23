@@ -33,7 +33,7 @@
     <?php
     include 'connectdatabase.php';
     
-    $statement = $db->query("SELECT game_name, description FROM game;");
+    $statement = $db->query("SELECT game_name, description FROM game ORDER BY id DESC;");
     
     include 'showgames.php'; 
     ?>
