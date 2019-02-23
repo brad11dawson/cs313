@@ -55,7 +55,7 @@
       <div class="form-group">
           <label for="username" class="col-form-label-lg">User Name:</label>
           <?php if ($user_exists): ?>
-            Sorry, this username was already taken.
+            <p>Sorry, this username was already taken.</p>
           <?php endif; ?>
           <input type="text" class="form-control" id="username" name="username" placeholder="User Name" required>
       </div>

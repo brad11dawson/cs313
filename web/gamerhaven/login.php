@@ -9,7 +9,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
-  
+
+<?php
+require 'connectdatabase.php';
+
+if (isset($_POST['username'] && isset($_POST['password']))) {
+  $statement = $db->prepare('SELECT * FROM general_user WHERE username = :username LIMIT 1;');
+  $statement->execute(array(':username' => $_POST['username']));
+  $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+  if ($user && password_verify($_POST['password'], $user['password'])) {
+    // success!
+    session_start();
+    $_SESSION['user_id'] = $user['id'];
+    header('Location: home.php');
+    die();
+  } else {
+    $incorrect_login = true;
+  }
+}
+?>  
+
 <body class="bg-light">
   <?php include 'header.php'; ?>
   <div class="container bg-primary py-2">
@@ -18,11 +38,13 @@
     <img src="gh_logo.png" />
   </div>
     <div class="mx-auto w-50 my-5" >
-
+      <?php if ($incorrect_login): ?>
+        <p>Incorrect Login Attempt</p>
+      <?php endif; ?>
       <form method="POST" action="login.php">
       <div class="form-group">
           <label for="username" class="col-form-label-lg">User Name:</label>
-          <input type="text" class="form-control" id="username" name="uesrname" placeholder="User Email" required>
+          <input type="text" class="form-control" id="username" name="username" placeholder="User Email" required>
       </div>
       <div class="form-group">
           <label for="password" class="col-form-label-lg">Password</label>
