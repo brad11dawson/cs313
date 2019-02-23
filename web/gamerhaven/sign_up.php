@@ -11,9 +11,8 @@
 </head>
 
 <?php
-    include 'connectdatabase.php';
-
     if (isset($_POST['username'])) {
+      include 'connectdatabase.php';
         //check to see if username is taken
         $username = $_POST['username'];
         $display_name = $_POST['display_name'];
@@ -37,8 +36,8 @@
             $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
             $stmt->execute();
 
-            $newURL = 'login.php';
-            header('Location: ' . $newURL);
+            $newURL = "login.php";
+            header("Location: $newURL");
             die();
         }
     }
