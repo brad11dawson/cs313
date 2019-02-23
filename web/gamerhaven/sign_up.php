@@ -17,6 +17,7 @@
         $username = $_POST['username'];
         $display_name = $_POST['display_name'];
 
+        
         $statement = $db->prepare('SELECT 1 AS one FROM users WHERE username = :username LIMIT 1;');
         $statement->execute([':username' => $username]);
         $user_exists = $statement->fetch(PDO::FETCH_ASSOC)['one'];
@@ -26,7 +27,6 @@
             $hashedpassword = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
             //Insert into database
-
             $stmt = $db->prepare(
               'INSERT INTO general_user(username, password, display_name)
               VALUES(:username, :hashedpassword, :display_name);'
@@ -54,6 +54,9 @@
 
       <form method="POST" action="sign_up.php">
       <div class="form-group">
+          <?php if ($user_exists): ?>
+            Sorry, this username was already taken.
+          <?php endif; ?>
           <label for="username" class="col-form-label-lg">User Name:</label>
           <input type="text" class="form-control" id="username" name="username" placeholder="User Name" required>
       </div>
