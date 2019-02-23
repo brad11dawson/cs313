@@ -53,7 +53,7 @@
   </div>
     <div class="mx-auto w-50 my-1" >
 
-      <form method="POST" action="sigh_up.php">
+      <form method="POST" action="sign_up.php">
       <div class="form-group">
           <label for="username" class="col-form-label-lg">User Name:</label>
           <input type="text" class="form-control" id="username" name="uesrname" placeholder="User Name" required>
