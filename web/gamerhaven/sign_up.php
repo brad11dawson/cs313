@@ -11,35 +11,33 @@
 </head>
 
 <?php
-    if (isset($_POST['username'])) {
+    if (isset($_POST['username']) && isset($_POST['password'])) {
       include 'connectdatabase.php';
         //check to see if username is taken
         $username = $_POST['username'];
         $display_name = $_POST['display_name'];
 
-        
         $statement = $db->prepare('SELECT 1 AS one FROM users WHERE username = :username LIMIT 1;');
         $statement->execute([':username' => $username]);
         $user_exists = $statement->fetch(PDO::FETCH_ASSOC)['one'];
 
-        if(isset($_POST["password"])) {
-            //check if password is a valid password
-            $hashedpassword = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        $hashedpassword = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-            //Insert into database
-            $stmt = $db->prepare(
-              'INSERT INTO general_user(username, password, display_name)
-              VALUES(:username, :hashedpassword, :display_name);'
-            );
-            $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-            $stmt->bindValue(':hashedpassword', $hashedpassword, PDO::PARAM_STR);
-            $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
-            $stmt->execute();
+        //Insert into database
+        $stmt = $db->prepare(
+          'INSERT INTO general_user(username, password, display_name)
+          VALUES(:username, :hashedpassword, :display_name);'
+        );
 
-            $newURL = "login.php";
-            header("Location: $newURL");
-            die();
-        }
+        $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+        $stmt->bindValue(':hashedpassword', $hashedpassword, PDO::PARAM_STR);
+        $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $newURL = "login.php";
+        header("Location: $newURL");
+        die();
+        
     }
 ?>
   
