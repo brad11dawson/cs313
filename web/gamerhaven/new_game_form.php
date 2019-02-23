@@ -8,19 +8,19 @@
       </div>
     <br/>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" name="consoles" id="xbobxone" value="1" checked>
+      <input class="form-check-input" type="checkbox" name="consoles[]" id="xbobxone" value="1" checked>
       <label class="form-check-label" for="xboxone">
         Xbox One
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" name="consoles" id="playstaytion4" value="2">
+      <input class="form-check-input" type="checkbox" name="consoles[]" id="playstaytion4" value="2">
       <label class="form-check-label" for="playstation4">
         PlayStation 4
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" name="consoles" id="nintendoswitch" value="3">
+      <input class="form-check-input" type="checkbox" name="consoles[]" id="nintendoswitch" value="3">
       <label class="form-check-label" for="nintendoswitch">
         Nintendo Switch
       </label>
