@@ -37,7 +37,7 @@
             $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
             $stmt->execute();
 
-            $newURL = 'loginin.php';
+            $newURL = 'login.php';
             header('Location: ' . $newURL);
             die();
         }
@@ -56,7 +56,7 @@
       <form method="POST" action="sigh_up.php">
       <div class="form-group">
           <label for="username" class="col-form-label-lg">User Name:</label>
-          <input type="text" class="form-control" id="username" name="uesrname" placeholder="User Email" required>
+          <input type="text" class="form-control" id="username" name="uesrname" placeholder="User Name" required>
       </div>
       <div class="form-group">
           <label for="displayname" class="col-form-label-lg">Display Name:</label>
