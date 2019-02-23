@@ -22,7 +22,7 @@
   FROM game_console 
   INNER JOIN game ON game_console.game_id = game.id 
   INNER JOIN console ON game_console.console_id = console.id 
-  WHERE console_name = 'PlayStation 4';");
+  WHERE console_name = 'PlayStation 4' ORDER BY game_name ASC;");
   
   include 'showgames.php';
   ?>
