@@ -1,8 +1,20 @@
-<div class="pb-2 pt-2 bg-primary text-center border-bottom">
-  <h1>Gamer Haven</h1>      
-  <p>Welcome to Gamer Haven, the best place to find reviews for games!</p>
+<div class="px-4 py-3 bg-primary d-flex justify-content-between border-bottom">
+  <img src="gh_logo.png" class="img-responsive" height="60" />
+  <div>
+    <h1>Gamer Haven</h1>
+  </div>   
+  <div>
+    <?php
+    if(true) {
+      echo '<a class="btn btn-primary" href="login.php" role="button">Log In</a>';
+      echo '<a class="btn btn-primary" href="sign_up.php" role="button">Sign Up</a>';
+    }
+    else {
+      echo '<button type="button" class="btn btn-primary">Log-Out</button>';
+    }
+    ?>
+  </div>
 </div>
-
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="home.php">Gamer Haven</a>
